@@ -19,7 +19,7 @@ jobs:
           distribution: 'temurin'
                
       - name: Bulid Maven
-      - run: mvm clean package -- file pom.xml
+      - run: mvm clean package --file pom.xml
 
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.2.0
