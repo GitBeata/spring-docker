@@ -1,4 +1,4 @@
-name: Build and deploy Spring Application
+name: Build and Deploy Spring Application
 on:
   push:
     branches:
@@ -7,44 +7,38 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+ 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
+ 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'temurin'
-
-      - name: Bulid Maven
+ 
+      - name: Build Maven
         run: mvn clean package --file pom.xml
-
+ 
       - name: Run Docker Compose
         run: docker compose up -d
-
+ 
       - name: Accept Host Key
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan -H ${{ secrets.HOST}} >> ~/home/humanitas/.ssh/known_host
+          ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
           chmod 700 ~/.ssh
-          chmod 644 ~/.ssh/known_host
-
-      - name: executing remote ssh commands using password
+          chmod 644 ~/.ssh/known_hosts
+ 
+      - name: Executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: 
-            cd projekt-spring-boot-2
-            cd spring-docker
-            cd projekt-spring-boot-2
+          script: |
+            ls -lah
+            cd projekt-spring-boot-2/spring-docker/
             docker build -t przyklad1-app .
-      
-
-
-      
-        
