@@ -45,5 +45,6 @@ jobs:
             git pull origin main
             mvn clean package
             docker build --rm -t przyklad1-app .
+            docker compose down
             docker compose up -d --build
             
