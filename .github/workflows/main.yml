@@ -25,7 +25,7 @@ jobs:
         run: docker compose up -d
 
       - name: Accept Host Key
-        run: ssh-keyscan -H ${{ secret.GOST}} >> ~/.ssh/known_host
+        run: ssh-keyscan -H ${{ secret.HOST}} >> ~/home/humanitas/.ssh/known_host
 
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.2.0
