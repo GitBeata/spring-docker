@@ -40,5 +40,6 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             ls -lah
-            cd projekt-spring-boot-2/springdocker/
+            cd projekt-spring-boot-2/springdocker
+            cd projekt-spring-boot-2
             docker build -t przyklad1-app .
