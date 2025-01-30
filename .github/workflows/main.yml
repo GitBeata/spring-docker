@@ -43,4 +43,5 @@ jobs:
             cd projekt-spring-boot-2/springdocker
             cd projekt-spring-boot-2
             docker build --rm -t przyklad1-app .
+            docker compose up -d --build
             
