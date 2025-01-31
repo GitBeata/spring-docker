@@ -4,7 +4,7 @@
       <div v-if="users.length">
         <UserCard v-for="user in users" :key="user.id" :user="user" />
       </div>
-      <p v-else>Ładowanie użytkowników...</p>
+      <p v-else>Ładowanie użytkowników....</p>
     </div>
   </template>
    
