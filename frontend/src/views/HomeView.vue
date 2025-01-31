@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h1>Home</h1>
-        <p>Aplikacja ćwiczeniowa Spring Boot & View.js</p>
+        <h1>Strona główna</h1>
+        <p>Aplikacja ćwiczeniowa Spring Boot & Vue.js</p>
     </div>
 </template>
 

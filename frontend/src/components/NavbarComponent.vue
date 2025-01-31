@@ -8,8 +8,9 @@
     </nav>
 </template>
 
+
 <script>
 export default {
-    name: 'NavbarComponent'
-}
+    name: "NavbarComponent"
+};
 </script>
