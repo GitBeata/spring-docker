@@ -40,8 +40,9 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             ls -lah
-            cd projekt-spring-boot-2/springdocker
-            cd projekt-spring-boot-2
+            cd projekt-spring-boot
+            git clone git@github.com:GitBeata/spring-docker.git
+            cd spring-docker
             git pull origin main
             mvn clean package
             docker build --rm -t spring-mongodb-image .
