@@ -44,7 +44,7 @@ jobs:
             cd projekt-spring-boot-2
             git pull origin main
             mvn clean package
-            docker build --rm -t przyklad1-app .
+            docker build --rm -t spring-mongodb-image .
             docker compose down
             docker compose up -d --build
             
