@@ -22,7 +22,7 @@ jobs:
         run: mvn clean package --file backend/pom.xml 
  
       - name: Run Docker Compose
-        run: docker compose up -d
+        run: docker compose up -d -f backend/Dockerfile
  
       - name: Accept Host Key
         run: |
