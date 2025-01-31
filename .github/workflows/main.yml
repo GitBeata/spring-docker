@@ -41,7 +41,6 @@ jobs:
           script: |
             ls -lah
             cd projekt-spring-boot
-            git clone git@github.com:GitBeata/spring-docker.git
             cd spring-docker
             git pull origin main
             mvn clean package
