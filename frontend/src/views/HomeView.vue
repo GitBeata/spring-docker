@@ -4,3 +4,9 @@
         <p>Aplikacja ćwiczeniowa Spring Boot & View.js</p>
     </div>
 </template>
+
+<script>
+    export default {
+        name: "HomeView"
+    };
+</script>
