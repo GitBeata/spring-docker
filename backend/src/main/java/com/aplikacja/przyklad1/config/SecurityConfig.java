@@ -16,7 +16,7 @@ public class SecurityConfig {
         http
                 .csrf().disable()
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/users/**").authenticated() // Zamienione z antMatchers()
+                        .requestMatchers("/api/users/**").authenticated() // Zamienione z antMatchers7()
                         .anyRequest().permitAll())
                 .formLogin(withDefaults()) // Włączenie domyślnego logowania
                 .logout(logout -> logout
